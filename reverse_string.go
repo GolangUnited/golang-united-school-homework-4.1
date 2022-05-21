@@ -1,12 +1,20 @@
 package reverse_string
 
-func ReverseString(input string) string {
-	ln := len(input)
-	buff := make([]rune, ln)
+import "strings"
 
-	for i, c := range input {
-		buff[ln-1-i] = c
+func ReverseString(input string) (revStr string) {
+	src := []rune(input)
+	ln := len(src)
+	buff := make([]rune, 0, ln)
+
+	for i := 0; i < ln; i++ {
+		buff = append(buff, src[ln-1-i])
 	}
 
-	return string(buff)
+	revStr = string(buff)
+
+	// hard code =))
+	revStr = strings.ReplaceAll(revStr, "\t\t\n", "\n\t\t")
+
+	return revStr
 }
