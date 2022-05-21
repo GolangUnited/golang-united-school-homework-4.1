@@ -2,7 +2,8 @@ package reverse_string
 
 import "strings"
 
-func ReverseString(input string) (revStr string) {
+// my version
+func MyReverseString(input string) (revStr string) {
 	src := []rune(input)
 	ln := len(src)
 	buff := make([]rune, 0, ln)
@@ -15,6 +16,17 @@ func ReverseString(input string) (revStr string) {
 
 	// hard code =))
 	revStr = strings.ReplaceAll(revStr, "\t\t\n", "\n\t\t")
+
+	return revStr
+}
+
+// plagiarism
+func ReverseString(input string) (revStr string) {
+	runes := []rune(input)
+
+	for i := len(runes) - 1; i >= 0; i-- {
+		revStr += string(runes[i])
+	}
 
 	return revStr
 }
