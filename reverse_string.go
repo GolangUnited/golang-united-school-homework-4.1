@@ -2,9 +2,9 @@ package reverse_string
 
 func ReverseString(input string) (output string) {
 	// solution goes here
-	runes := []rune(input)
-	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
-		runes[i], runes[j] = runes[j], runes[i]
+	rune := []rune(input)
+	for i, j := 0, len(rune)-1; i < j; i, j = i+1, j-1 {
+		rune[i], rune[j] = rune[j], rune[i]
 	}
-	return string(runes)
+	return string(rune)
 }
