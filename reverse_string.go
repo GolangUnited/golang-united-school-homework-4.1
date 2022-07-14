@@ -6,8 +6,9 @@ func ReverseString(input string) (output string) {
 		return ""
 	}
 
-	smallOutput := ReverseString(input[1:])
 	myRune := []rune(input)
+	smallOutput := ReverseString(string(myRune[1:]))
+
 	output = smallOutput + string(myRune[0])
 
 	return output
